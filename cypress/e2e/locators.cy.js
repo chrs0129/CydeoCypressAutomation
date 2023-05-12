@@ -29,4 +29,22 @@ describe("Find or Get Elements by Using Differen Locators", () => {
       cy.get('button').should('contain', 'Login').click();
   })
 
+  it('Check finding elements by traveling throug DOM', ()=>{
+    cy.get('input[name="username"]').parents('form').find('button').should('contain', 'Login').click;
+  })
+
+  it.only('check different type of asserions', ()=>{
+    cy.get("#wooden_spoon")
+    .should('contain', 'Login')
+    .and('have.class', "btn btn-primary");
+
+    cy.get("#wooden_spoon").then((element)=>{
+      expect(element).to.have.text('Login');
+      expect(element).to.have.class('btn btn-primary');
+
+    })
+    
+
+  })
+
 })
