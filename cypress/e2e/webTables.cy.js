@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-const cypress = require("cypress");
+const cypress = require('cypress');
 
 describe('Cypress WebTable Tests', { baseUrl: 'https://demoqa.com' }, () => {
   /**
