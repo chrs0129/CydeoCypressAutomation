@@ -1,7 +1,5 @@
 /// <reference types="cypress" />
 
-const cypress = require('cypress');
-
 describe('Cypress WebTable Tests', { baseUrl: 'https://demoqa.com' }, () => {
   /**
    * If you need to navigate to a URL other than your baseUrl, you define it at describe block or in the it block
@@ -40,11 +38,11 @@ describe('Cypress WebTable Tests', { baseUrl: 'https://demoqa.com' }, () => {
         cy.wrap(row).find('[title="Delete"]').click();
       });
     // Assert that table does NOT have Alden record
-    cy.get('.rt-body').should('not.contain', 'Alden');
+    cy.get('.rt-tbody').should('not.contain', 'Alden');
     // search for Alden in the body
     cy.get('#searchBox').type('Alden');
     // Assert that there is no record
-    cy.get('.rt-body').should('not.contain', 'Alden');
+    cy.get('.rt-tbody').should('not.contain', 'Alden');
     // No data found element is visible or not
     cy.get('.rt-noData').should('contain', 'No rows found').should('be.visible');
   });
